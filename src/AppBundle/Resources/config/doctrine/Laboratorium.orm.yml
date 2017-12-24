@@ -1,0 +1,24 @@
+AppBundle\Entity\Laboratorium:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\LaboratoriumRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    oneToOne:
+      idUser:
+        targetEntity: User
+        joinColumn:
+          name: id_user
+          referencedColumnName: id
+    fields:
+      namaLab:
+        type: string
+        length: 255
+      jenisLab:
+        type: integer
+        length: 10

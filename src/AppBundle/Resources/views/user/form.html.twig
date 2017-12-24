@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">{{ title }}</h3>
+                    </div>
+                    <div class="block-content">
+                        {% for msg in app.session.getFlashBag().get('message') %}
+                            <div class="alert alert-warning">
+                                {{ msg }}
+                            </div>
+                        {% endfor %}
+
+                        {{ form_start(form) }}
+                            {% for frm in form %}
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        {{ form_row(frm) }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        <div class="form-group text-right">
+                            <input type="submit" value="{{ title }}" class="btn btn-alt-primary">
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

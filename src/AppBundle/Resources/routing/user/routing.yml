@@ -1,0 +1,23 @@
+medical_user_create:
+  path: /create
+  defaults:
+    _controller: AppBundle:User/CreateUser:index
+  methods: GET|POST
+
+medical_user_list:
+  path: /
+  defaults:
+    _controller: AppBundle:User/UserList:index
+  methods: GET
+
+medical_user_edit:
+  path: /edit/{id}
+  defaults:
+    _controller: AppBundle:User/UserEdit:index
+  methods: GET|POST
+
+medical_user_delete:
+  path: /delete/{id}
+  defaults:
+    _controller: AppBundle:User/UserDelete:index
+  methods: GET

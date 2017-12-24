@@ -1,0 +1,24 @@
+AppBundle\Entity\Hasil:
+  type: entity
+  name: hasil
+  repositoryClass: AppBundle\Repository\HasilRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  lifecycleCallbacks: {  }
+  fields:
+    satuan:
+      type: string
+      length: 100
+    parameter:
+      type: string
+      length: 100
+    metodeAnalisa:
+      type: string
+      length: 255
+      name: metode_analisa
+    bakuMutu:
+      type: string
+      length: 255
+      name: baku_mutu

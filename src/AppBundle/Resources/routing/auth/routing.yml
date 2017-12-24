@@ -1,0 +1,4 @@
+medical_auth_login:
+  path: /login
+  defaults:
+    _controller: AppBundle:Auth/AuthLogin:index

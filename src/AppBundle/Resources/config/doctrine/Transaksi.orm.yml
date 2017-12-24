@@ -1,0 +1,35 @@
+AppBundle\Entity\Transaksi:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TransaksiRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    oneToOne:
+      idSampel:
+        targetEntity: Sampel
+        joinColumn:
+          name: id_sampel
+          referencedColumnName: id
+      idHasil:
+        targetEntity: Hasil
+        joinColumn:
+          name: id_hasil
+          referencedColumnName: id
+    manyToOne:
+      idPelanggan:
+        targetEntity: Pelanggan
+        joinColumn:
+          name: id_pelanggan
+          referencedColumnName: id
+    fields:
+      biaya:
+        type: integer
+        length: 100
+      tanggalPengambilanHasil:
+        type: datetime
+        name: tanggal_pengambilan_hasil

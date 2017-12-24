@@ -1,0 +1,19 @@
+AppBundle\Entity\Pelanggan:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PelangganRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    fields:
+      nama:
+        type: string
+        length: 255
+      alamat:
+        type: text
+      telepon:
+        type: integer

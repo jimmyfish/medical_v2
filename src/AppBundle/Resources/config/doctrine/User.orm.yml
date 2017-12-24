@@ -1,0 +1,47 @@
+AppBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+    fields:
+      name:
+        type: string
+        length: 100
+      username:
+        type: string
+        length: 100
+        unique: true
+      email:
+        type: string
+        length: 100
+        unique: true
+      password:
+        type: string
+        length: 255
+      alamat:
+        type: text
+        nullable: true
+      telp:
+        type: bigint
+        length: 20
+        nullable: true
+      bagian:
+        type: string
+        nullable: false
+        length: 100
+      jabatan:
+        type: string
+        nullable: false
+        length: 100
+      isDeleted:
+        type: integer
+        nullable: false
+      roles:
+        type: string
+        nullable: false

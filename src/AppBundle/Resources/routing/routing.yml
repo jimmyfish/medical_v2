@@ -1,0 +1,7 @@
+medical_user:
+  resource: 'user/routing.yml'
+  prefix: /user
+
+medical_auth:
+  resource: 'auth/routing.yml'
+  prefix: /auth
