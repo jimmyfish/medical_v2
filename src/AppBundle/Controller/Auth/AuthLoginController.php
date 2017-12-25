@@ -3,15 +3,13 @@
  * Created by PhpStorm.
  * User: jimmy
  * Date: 25/12/17
- * Time: 5:47
+ * Time: 5:47.
  */
 
 namespace AppBundle\Controller\Auth;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AuthLoginController extends Controller
 {
@@ -33,7 +31,7 @@ class AuthLoginController extends Controller
 
         return $this->render('AppBundle:auth:login.html.twig', array(
             'last_username' => $lastUsername,
-            'error'         => $error,
+            'error' => $error,
         ));
     }
 }

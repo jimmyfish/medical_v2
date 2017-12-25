@@ -74,7 +74,7 @@ class Laboratorium
     /**
      * @param mixed $idUser
      */
-    public function setIdUser($idUser)
+    public function setIdUser(User $idUser)
     {
         $this->idUser = $idUser;
     }

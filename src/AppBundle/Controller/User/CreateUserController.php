@@ -31,6 +31,7 @@ class CreateUserController extends Controller
 
             try {
                 $manager->flush();
+
                 return $this->redirect($request->headers->get('referer'));
             } catch (\Exception $e) {
                 $this->get('session')->getFlashBag()->add('message', 'Email atau Username telah digunakan');

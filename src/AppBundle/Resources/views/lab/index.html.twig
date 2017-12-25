@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Daftar Pengguna{% endblock %}
+{% block title %}Daftar Laboratorium{% endblock %}
 
 {% block content %}
     <div class="content">
         <div class="block">
             <div class="block-header block-header-default">
-                <h3 class="block-title">Daftar Pengguna</h3>
+                <h3 class="block-title">Daftar Laboratorium</h3>
                 <div class="block-options">
-                    <a href="{{ path('medical_user_create') }}" class="btn btn-alt-primary">
+                    <a href="{{ path('medical_lab_create') }}" class="btn btn-alt-primary">
                         <i class="fa fa-plus"></i> Tambah
                     </a>
                 </div>
@@ -19,19 +19,19 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
-                        <th>Email</th>
+                        <th>Jenis</th>
                         <th>Aksi</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% set i = 1 %}
-                    {% for data in user %}
+                    {% for data in lab %}
                         <tr>
                             <th>{{ i }}</th>
-                            <th>{{ data.name }}</th>
-                            <th>{{ data.email }}</th>
+                            <th>{{ data.namaLab }}</th>
+                            <th>{{ data.jenisLab }}</th>
                             <th>
-                                <a href="{{ path('medical_user_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ path('medical_lab_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
                             </th>
                         </tr>
                         {% set i = i + 1 %}

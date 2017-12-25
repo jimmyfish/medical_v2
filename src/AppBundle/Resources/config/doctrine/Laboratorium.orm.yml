@@ -1,6 +1,6 @@
 AppBundle\Entity\Laboratorium:
     type: entity
-    table: null
+    table: laboratorium
     repositoryClass: AppBundle\Repository\LaboratoriumRepository
     id:
         id:
@@ -20,5 +20,5 @@ AppBundle\Entity\Laboratorium:
         type: string
         length: 255
       jenisLab:
-        type: integer
-        length: 10
+        type: string
+        length: 255

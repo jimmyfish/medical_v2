@@ -1,0 +1,17 @@
+medical_lab_index:
+  path: /
+  defaults:
+    _controller: AppBundle:Laboratorium/LaboratoriumList:index
+  methods: GET
+
+medical_lab_create:
+  path: /create
+  defaults:
+    _controller: AppBundle:Laboratorium/LaboratoriumCreate:index
+  methods: GET|POST
+
+medical_lab_edit:
+  path: /edit/{id}
+  defaults:
+    _controller: AppBundle:Laboratorium/LaboratoriumEdit:index
+  methods: GET|POST

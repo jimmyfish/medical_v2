@@ -5,3 +5,7 @@ medical_user:
 medical_auth:
   resource: 'auth/routing.yml'
   prefix: /auth
+
+medical_lab:
+  resource: 'lab/routing.yml'
+  prefix: /lab
