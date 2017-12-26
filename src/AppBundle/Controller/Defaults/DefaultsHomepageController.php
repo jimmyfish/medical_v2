@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: jimmy
  * Date: 26/12/17
- * Time: 21:22
+ * Time: 21:22.
  */
 
 namespace AppBundle\Controller\Defaults;
-
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

@@ -15,14 +15,14 @@ class SampelType extends AbstractType
     {
         $builder->add('lokasiPengambilan')->add('alamat')->add('petugasPengambil')->add('tanggal')->add('kondisi')->add('jenisSampel')->add('parameter')->add('idLab');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Sampel'
+            'data_class' => 'AppBundle\Entity\Sampel',
         ));
     }
 
@@ -33,6 +33,4 @@ class SampelType extends AbstractType
     {
         return 'appbundle_sampel';
     }
-
-
 }

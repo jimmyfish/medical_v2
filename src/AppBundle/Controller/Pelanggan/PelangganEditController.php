@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: jimmy
  * Date: 26/12/17
- * Time: 21:51
+ * Time: 21:51.
  */
 
 namespace AppBundle\Controller\Pelanggan;
-
 
 use AppBundle\Entity\Pelanggan;
 use AppBundle\Form\PelangganType;

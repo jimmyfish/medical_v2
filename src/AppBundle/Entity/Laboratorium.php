@@ -78,4 +78,22 @@ class Laboratorium
     {
         $this->idUser = $idUser;
     }
+
+    private $kodeLab;
+
+    /**
+     * @return mixed
+     */
+    public function getKodeLab()
+    {
+        return $this->kodeLab;
+    }
+
+    /**
+     * @param mixed $kodeLab
+     */
+    public function setKodeLab($kodeLab)
+    {
+        $this->kodeLab = $kodeLab;
+    }
 }

@@ -15,14 +15,14 @@ class HasilType extends AbstractType
     {
         $builder->add('satuan')->add('parameter')->add('metodeAnalisa')->add('bakuMutu');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Hasil'
+            'data_class' => 'AppBundle\Entity\Hasil',
         ));
     }
 
@@ -33,6 +33,4 @@ class HasilType extends AbstractType
     {
         return 'appbundle_hasil';
     }
-
-
 }

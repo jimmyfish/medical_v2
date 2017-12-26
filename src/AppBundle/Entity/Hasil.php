@@ -168,4 +168,58 @@ class Hasil
     {
         $this->idLab = $idLab;
     }
+
+    private $isApproved = 0;
+
+    private $alasan;
+
+    private $keterangan;
+
+    /**
+     * @return mixed
+     */
+    public function getisApproved()
+    {
+        return $this->isApproved;
+    }
+
+    /**
+     * @param mixed $isApproved
+     */
+    public function setIsApproved($isApproved)
+    {
+        $this->isApproved = $isApproved;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlasan()
+    {
+        return $this->alasan;
+    }
+
+    /**
+     * @param mixed $alasan
+     */
+    public function setAlasan($alasan)
+    {
+        $this->alasan = $alasan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKeterangan()
+    {
+        return $this->keterangan;
+    }
+
+    /**
+     * @param mixed $keterangan
+     */
+    public function setKeterangan($keterangan)
+    {
+        $this->keterangan = $keterangan;
+    }
 }

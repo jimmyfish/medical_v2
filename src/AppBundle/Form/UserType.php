@@ -70,7 +70,7 @@ class UserType extends AbstractType
                     'Manajer Teknik' => 'Manajer Teknik',
                     'Analis' => 'Analis',
                     'Petugas Pelayanan' => 'Petugas Pelayanan',
-                ]
+                ],
             ])
             ->add('jabatan', TextType::class, [
                 'attr' => [

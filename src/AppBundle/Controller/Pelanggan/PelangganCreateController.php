@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: jimmy
  * Date: 26/12/17
- * Time: 21:42
+ * Time: 21:42.
  */
 
 namespace AppBundle\Controller\Pelanggan;
-
 
 use AppBundle\Entity\Pelanggan;
 use AppBundle\Form\PelangganType;
@@ -37,7 +36,6 @@ class PelangganCreateController extends Controller
             }
 
             return $this->redirectToRoute('medical_pelanggan_index');
-
         }
 
         return $this->render('AppBundle:pelanggan:form.html.twig', [

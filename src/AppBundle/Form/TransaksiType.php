@@ -15,14 +15,14 @@ class TransaksiType extends AbstractType
     {
         $builder->add('biaya')->add('tanggalPengambilanHasil')->add('idSampel')->add('idHasil')->add('idPelanggan');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Transaksi'
+            'data_class' => 'AppBundle\Entity\Transaksi',
         ));
     }
 
@@ -33,6 +33,4 @@ class TransaksiType extends AbstractType
     {
         return 'appbundle_transaksi';
     }
-
-
 }

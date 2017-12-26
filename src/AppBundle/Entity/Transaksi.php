@@ -17,7 +17,7 @@ class Transaksi
 
     private $idPelanggan;
 
-    private $idHasil;
+    private $idHasil = null;
 
     /**
      * @return mixed
@@ -78,7 +78,7 @@ class Transaksi
     /**
      * @param mixed $idSampel
      */
-    public function setIdSampel($idSampel)
+    public function setIdSampel(Sampel $idSampel)
     {
         $this->idSampel = $idSampel;
     }
@@ -92,9 +92,9 @@ class Transaksi
     }
 
     /**
-     * @param mixed $idPelanggan
+     * @param Pelanggan $idPelanggan
      */
-    public function setIdPelanggan($idPelanggan)
+    public function setIdPelanggan(Pelanggan $idPelanggan)
     {
         $this->idPelanggan = $idPelanggan;
     }
@@ -110,7 +110,7 @@ class Transaksi
     /**
      * @param mixed $idHasil
      */
-    public function setIdHasil($idHasil)
+    public function setIdHasil(Hasil $idHasil)
     {
         $this->idHasil = $idHasil;
     }

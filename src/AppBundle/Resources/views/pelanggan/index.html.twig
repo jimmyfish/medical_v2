@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Daftar Pelanggan{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Daftar Pelanggan</h3>
+                <div class="block-options">
+                    <a href="{{ path('medical_pelanggan_create') }}" class="btn btn-alt-primary">
+                        <i class="fa fa-plus"></i> Tambah
+                    </a>
+                </div>
+            </div>
+            <div class="block-content">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Nomor Telepon</th>
+                        <th>Aksi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 1 %}
+                    {% for data in pelanggan %}
+                        <tr>
+                            <th>{{ i }}</th>
+                            <th>{{ data.nama }}</th>
+                            <th>{{ data.alamat }}</th>
+                            <th>{{ data.telepon }}</th>
+                            <th>
+                                <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                            </th>
+                        </tr>
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

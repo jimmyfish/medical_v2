@@ -20,9 +20,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicons/favicon.png') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/favicons/favicon-192x192.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon-180x180.png') }}">
-    <!-- END Icons -->
-    <!-- Stylesheets -->
-    <!-- Codebase framework -->
+
+    {% block customCSS %}{% endblock %}
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.css') }}">
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <link rel="stylesheet" id="css-theme" href="{{ asset('assets/css/themes/earth.min.css') }}">
@@ -78,12 +77,16 @@
                 </div>
                 <div class="content-side content-side-full">
                     <ul class="nav-main">
-                        {#<li>#}
-                            {#<a href="{{ path('medical_index') }}"><i class="si si-home"></i><span class="sidebar-mini-hide">Beranda</span></a>#}
-                        {#</li>#}
+                        <li>
+                            <a href="{{ path('medical_lab_index') }}"><i class="si si-vector"></i><span class="sidebar-mini-hide">Laboratorium</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ path('medical_pelanggan_index') }}"><i class="si si-users"></i><span class="sidebar-mini-hide">Pelanggan</span></a>
+                        </li>
                         <li>
                             <a href="{{ path('medical_user_list') }}"><i class="si si-user"></i><span class="sidebar-mini-hide">Pengguna</span></a>
                         </li>
+
 
                         {#<li>#}
                             {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i><span class="sidebar-mini-hide">STS</span></a>#}
@@ -143,9 +146,7 @@
                                 {#</li>#}
                             {#</ul>#}
                         {#</li>#}
-                        <li>
-                            <a href="{{ path('medical_lab_index') }}"><i class="si si-vector"></i><span class="sidebar-mini-hide">Laboratorium</span></a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -164,22 +165,22 @@
                         {{ app.user.name }} <i class="fa fa-angle-down ml-5"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
-                        <a class="dropdown-item" href="be_pages_generic_profile.html">
-                            <i class="si si-user mr-5"></i> Profile
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
-                            <span><i class="si si-envelope-open mr-5"></i> Inbox</span>
-                            <span class="badge badge-primary">3</span>
-                        </a>
-                        <a class="dropdown-item" href="be_pages_generic_invoice.html">
-                            <i class="si si-note mr-5"></i> Invoices
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                            <i class="si si-wrench mr-5"></i> Settings
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="op_auth_signin.html">
+                        {#<a class="dropdown-item" href="be_pages_generic_profile.html">#}
+                            {#<i class="si si-user mr-5"></i> Profile#}
+                        {#</a>#}
+                        {#<a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">#}
+                            {#<span><i class="si si-envelope-open mr-5"></i> Inbox</span>#}
+                            {#<span class="badge badge-primary">3</span>#}
+                        {#</a>#}
+                        {#<a class="dropdown-item" href="be_pages_generic_invoice.html">#}
+                            {#<i class="si si-note mr-5"></i> Invoices#}
+                        {#</a>#}
+                        {#<div class="dropdown-divider"></div>#}
+                        {#<a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">#}
+                            {#<i class="si si-wrench mr-5"></i> Settings#}
+                        {#</a>#}
+                        {#<div class="dropdown-divider"></div>#}
+                        <a class="dropdown-item" href="{{ path('medical_auth_logout') }}">
                             <i class="si si-logout mr-5"></i> Sign Out
                         </a>
                     </div>

@@ -39,3 +39,7 @@ AppBundle\Entity\Sampel:
       parameter:
         type: string
         length: 255
+      kodeSampel:
+        type: string
+        length: 100
+        nullable: true

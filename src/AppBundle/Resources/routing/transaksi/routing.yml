@@ -1,0 +1,4 @@
+medical_transact_create:
+  path: /create
+  defaults:
+    _controller: AppBundle:Transact/TransactCreate:index

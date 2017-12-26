@@ -18,3 +18,7 @@ medical_lab:
 medical_pelanggan:
   resource: 'pelanggan/routing.yml'
   prefix: /pelanggan
+
+medical_transact:
+  resource: 'transaksi/routing.yml'
+  prefix: /transaksi

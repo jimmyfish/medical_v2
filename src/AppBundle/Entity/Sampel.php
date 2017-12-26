@@ -25,6 +25,24 @@ class Sampel
 
     private $idLab;
 
+    private $kodeSampel;
+
+    /**
+     * @return mixed
+     */
+    public function getKodeSampel()
+    {
+        return $this->kodeSampel;
+    }
+
+    /**
+     * @param mixed $kodeSampel
+     */
+    public function setKodeSampel($kodeSampel)
+    {
+        $this->kodeSampel = $kodeSampel;
+    }
+
     /**
      * @return mixed
      */
@@ -164,7 +182,7 @@ class Sampel
     /**
      * @param mixed $idLab
      */
-    public function setIdLab($idLab)
+    public function setIdLab(Laboratorium $idLab)
     {
         $this->idLab = $idLab;
     }

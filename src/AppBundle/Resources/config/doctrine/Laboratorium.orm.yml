@@ -22,3 +22,6 @@ AppBundle\Entity\Laboratorium:
       jenisLab:
         type: string
         length: 255
+      kodeLab:
+        type: string
+        length: 100

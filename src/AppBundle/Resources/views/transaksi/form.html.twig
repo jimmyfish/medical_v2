@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="{{ asset('assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">{{ title }}</h3>
+                    </div>
+                    <div class="block-content">
+                        {% for msg in app.session.getFlashBag().get('message') %}
+                            <div class="alert alert-warning">
+                                {{ msg }}
+                            </div>
+                        {% endfor %}
+
+                        <form action="" method="post">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="biaya">Biaya :</label>
+                                    <input type="text" name="biaya" id="biaya" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="tanggal_pengambilan_hasil">Tanggal Pengambilan Hasil :</label>
+                                    <input type="text" class="js-datepicker form-control" id="tanggal_pengambilan_hasil" name="tanggal_pengambilan_hasil" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="pelanggan_name">Nama Pelanggan :</label>
+                                    <input type="text" name="pelanggan_name" id="pelanggan_name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="pelanggan_address">Alamat Pelanggan :</label>
+                                    <textarea name="pelanggan_address" id="pelanggan_address" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="pelanggan_telepon">Telepon :</label>
+                                    <input type="text" name="pelanggan_telepon" id="pelanggan_telepon" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_lokasi">Lokasi Pengambilan :</label>
+                                    <input type="text" name="sampel_lokasi" id="sampel_lokasi" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_alamat_lokasi">Alamat Pengambilan :</label>
+                                    <input type="text" name="sampel_alamat_lokasi" id="sampel_alamat_lokasi" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_petugas">Petugas Pengambilan :</label>
+                                    <input type="text" name="sampel_petugas" id="sampel_petugas" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_tanggal_pengambilan">Tanggal Pengambilan Sampel:</label>
+                                    <input type="text" class="js-datepicker form-control" id="sampel_tanggal_pengambilan" name="sampel_tanggal_pengambilan" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_kondisi">Kondisi :</label>
+                                    <input type="text" name="sampel_kondisi" id="sampel_kondisi" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_jenis">Jenis Sampel :</label>
+                                    <input type="text" name="sampel_jenis" id="sampel_jenis" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="sampel_parameter">Parameter :</label>
+                                    <input type="text" name="sampel_parameter" id="sampel_parameter" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="lab_id">Laboratorium :</label>
+                                    <select name="lab_id" id="lab_id" class="form-control">
+                                        {% for data in info.lab %}
+                                            <option value="{{ data.id }}">{{ data.namaLab }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group text-right">
+                                <input type="submit" value="{{ title }}" class="btn btn-alt-primary">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block pluginJS %}
+    <script src="{{ asset('assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/masked-inputs/jquery.maskedinput.min.js') }}"></script>
+{% endblock %}
+
+{% block customJS %}
+    <script>
+        jQuery(function () {
+            // Init page helpers (BS Datepicker + BS Colorpicker + BS Maxlength + Select2 + Masked Input + Range Sliders + Tags Inputs plugins)
+            Codebase.helpers(['datepicker', 'colorpicker', 'maxlength', 'select2', 'masked-inputs', 'rangeslider', 'tags-inputs']);
+        });
+    </script>
+{% endblock %}

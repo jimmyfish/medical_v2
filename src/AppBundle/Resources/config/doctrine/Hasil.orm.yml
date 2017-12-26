@@ -22,3 +22,9 @@ AppBundle\Entity\Hasil:
       type: string
       length: 255
       name: baku_mutu
+    keterangan:
+      type: text
+    alasan:
+      type: text
+    isApproved:
+      type: integer

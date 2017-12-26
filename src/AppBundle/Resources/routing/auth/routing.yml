@@ -2,3 +2,8 @@ medical_auth_login:
   path: /login
   defaults:
     _controller: AppBundle:Auth/AuthLogin:index
+
+medical_auth_logout:
+  path: /logout
+  defaults:
+    _controller: AppBundle:Auth/AuthLogout:index

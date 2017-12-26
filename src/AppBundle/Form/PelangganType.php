@@ -20,27 +20,27 @@ class PelangganType extends AbstractType
             ->add('nama', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                ]
+                ],
             ])
             ->add('alamat', TextareaType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                ]
+                ],
             ])
             ->add('telepon', NumberType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                ]
+                ],
             ]);
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Pelanggan'
+            'data_class' => 'AppBundle\Entity\Pelanggan',
         ));
     }
 
@@ -51,6 +51,4 @@ class PelangganType extends AbstractType
     {
         return 'appbundle_pelanggan';
     }
-
-
 }

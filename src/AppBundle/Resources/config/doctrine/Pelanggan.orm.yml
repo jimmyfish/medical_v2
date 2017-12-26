@@ -16,4 +16,5 @@ AppBundle\Entity\Pelanggan:
       alamat:
         type: text
       telepon:
-        type: integer
+        type: string
+        length: 20
