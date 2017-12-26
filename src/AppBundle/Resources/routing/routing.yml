@@ -1,3 +1,8 @@
+medical_index:
+  path: /
+  defaults:
+    _controller: AppBundle:Defaults/DefaultsHomepage:index
+
 medical_user:
   resource: 'user/routing.yml'
   prefix: /user
@@ -9,3 +14,7 @@ medical_auth:
 medical_lab:
   resource: 'lab/routing.yml'
   prefix: /lab
+
+medical_pelanggan:
+  resource: 'pelanggan/routing.yml'
+  prefix: /pelanggan

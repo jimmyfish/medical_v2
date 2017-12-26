@@ -1,0 +1,21 @@
+medical_pelanggan_index:
+  path: /
+  defaults:
+    _controller: AppBundle:Pelanggan/PelangganList:index
+
+medical_pelanggan_create:
+  path: /create
+  defaults:
+    _controller: AppBundle:Pelanggan/PelangganCreate:index
+  methods: GET|POST
+
+medical_pelanggan_edit:
+  path: /edit/{id}
+  defaults:
+    _controller: AppBundle:Pelanggan/PelangganEdit:index
+
+medical_pelanggan_delete:
+  path: /delete/{id}
+  defaults:
+    _controller: AppBundle:Pelanggan/PelangganDelete:index
+  methods: GET

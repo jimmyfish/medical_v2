@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -61,10 +62,15 @@ class UserType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-            ->add('bagian', TextType::class, [
+            ->add('bagian', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control',
                 ],
+                'choices' => [
+                    'Manajer Teknik' => 'Manajer Teknik',
+                    'Analis' => 'Analis',
+                    'Petugas Pelayanan' => 'Petugas Pelayanan',
+                ]
             ])
             ->add('jabatan', TextType::class, [
                 'attr' => [
