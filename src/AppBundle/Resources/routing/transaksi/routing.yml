@@ -2,3 +2,8 @@ medical_transact_create:
   path: /create
   defaults:
     _controller: AppBundle:Transact/TransactCreate:index
+
+medical_transact_list:
+  path: /
+  defaults:
+    _controller: AppBundle:Transact/TransactList:index

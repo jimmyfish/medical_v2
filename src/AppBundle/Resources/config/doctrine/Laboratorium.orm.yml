@@ -9,12 +9,6 @@ AppBundle\Entity\Laboratorium:
             generator:
                 strategy: AUTO
     lifecycleCallbacks: {  }
-    oneToOne:
-      idUser:
-        targetEntity: User
-        joinColumn:
-          name: id_user
-          referencedColumnName: id
     fields:
       namaLab:
         type: string

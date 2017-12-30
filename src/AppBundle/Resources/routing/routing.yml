@@ -22,3 +22,7 @@ medical_pelanggan:
 medical_transact:
   resource: 'transaksi/routing.yml'
   prefix: /transaksi
+
+medical_hasil:
+  resource: 'hasil/routing.yml'
+  prefix: /hasil

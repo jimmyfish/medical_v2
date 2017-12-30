@@ -6,6 +6,13 @@ AppBundle\Entity\Hasil:
     id:
       type: integer
       generator: { strategy: AUTO }
+  oneToOne:
+    transaksi:
+      targetEntity: Transaksi
+      inversedBy: hasil
+      joinColumn:
+        name: transaksi
+        referencedColumnName: id
   lifecycleCallbacks: {  }
   fields:
     satuan:

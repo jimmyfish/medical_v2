@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="block-header block-header-default">
+                        <h2 class="block-title">Daftar Transaksi</h2>
+                        <div class="block-options">
+                            <a href="{{ path('medical_transact_create') }}" class="btn btn-alt-primary">
+                                <i class="fa fa-plus"></i> Tambah
+                            </a>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Kode Sampel</th>
+                                <th>Nama Pelanggan</th>
+                                <th>Hasil</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% set i = 1 %}
+                            {% for data in transaksi %}
+                                <tr>
+                                    <th>{{ i }}</th>
+                                    <th>{{ data.sampel.kodeSampel }}</th>
+                                    <th>{{ data.pelanggan.nama }}</th>
+                                    <th>
+                                        {% if data.hasil is null %}
+                                            <a href="{{ path('medical_hasil_create', {'sampel_id': data.id}) }}">Kosong</a>
+                                            {% else %}
+                                                <span class="badge badge-success">{{ data.hasil.keterangan }}</span>
+                                        {% endif %}
+                                    </th>
+                                    <th>
+                                        <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                                    </th>
+                                </tr>
+                                {% set i = i + 1 %}
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -10,21 +10,19 @@ AppBundle\Entity\Transaksi:
                 strategy: AUTO
     lifecycleCallbacks: {  }
     oneToOne:
-      idSampel:
+      sampel:
         targetEntity: Sampel
         joinColumn:
-          name: id_sampel
+          name: sampel
           referencedColumnName: id
-      idHasil:
+      hasil:
         targetEntity: Hasil
-        joinColumn:
-          name: id_hasil
-          referencedColumnName: id
+        mappedBy: transaksi
     manyToOne:
-      idPelanggan:
+      pelanggan:
         targetEntity: Pelanggan
         joinColumn:
-          name: id_pelanggan
+          name: pelanggan
           referencedColumnName: id
     fields:
       biaya:

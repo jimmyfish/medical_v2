@@ -1,0 +1,4 @@
+medical_hasil_create:
+  path: /create
+  defaults:
+    _controller: AppBundle:Hasil/HasilCreate:index

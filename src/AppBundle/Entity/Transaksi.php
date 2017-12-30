@@ -13,11 +13,11 @@ class Transaksi
 
     private $tanggalPengambilanHasil;
 
-    private $idSampel;
+    private $sampel;
 
-    private $idPelanggan;
+    private $pelanggan;
 
-    private $idHasil = null;
+    private $hasil = null;
 
     /**
      * @return mixed
@@ -70,48 +70,48 @@ class Transaksi
     /**
      * @return mixed
      */
-    public function getIdSampel()
+    public function getSampel()
     {
-        return $this->idSampel;
+        return $this->sampel;
     }
 
     /**
-     * @param mixed $idSampel
+     * @param mixed $sampel
      */
-    public function setIdSampel(Sampel $idSampel)
+    public function setSampel(Sampel $sampel)
     {
-        $this->idSampel = $idSampel;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdPelanggan()
-    {
-        return $this->idPelanggan;
-    }
-
-    /**
-     * @param Pelanggan $idPelanggan
-     */
-    public function setIdPelanggan(Pelanggan $idPelanggan)
-    {
-        $this->idPelanggan = $idPelanggan;
+        $this->sampel = $sampel;
     }
 
     /**
      * @return mixed
      */
-    public function getIdHasil()
+    public function getPelanggan()
     {
-        return $this->idHasil;
+        return $this->pelanggan;
     }
 
     /**
-     * @param mixed $idHasil
+     * @param Pelanggan $pelanggan
      */
-    public function setIdHasil(Hasil $idHasil)
+    public function setPelanggan(Pelanggan $pelanggan)
     {
-        $this->idHasil = $idHasil;
+        $this->pelanggan = $pelanggan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasil()
+    {
+        return $this->hasil;
+    }
+
+    /**
+     * @param mixed $hasil
+     */
+    public function setHasil(Hasil $hasil)
+    {
+        $this->hasil = $hasil;
     }
 }

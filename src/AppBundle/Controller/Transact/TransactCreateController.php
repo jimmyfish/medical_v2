@@ -12,11 +12,8 @@ use AppBundle\Entity\Laboratorium;
 use AppBundle\Entity\Pelanggan;
 use AppBundle\Entity\Sampel;
 use AppBundle\Entity\Transaksi;
-use Doctrine\Common\Util\Debug;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class TransactCreateController extends Controller
 {
@@ -27,7 +24,6 @@ class TransactCreateController extends Controller
         $info['lab'] = $manager->getRepository(Laboratorium::class)->findAll();
 
         if ('POST' === $request->getMethod()) {
-
             /*
              * Starting with Pelanggan
              */
@@ -40,7 +36,7 @@ class TransactCreateController extends Controller
             $manager->persist($pelanggan);
 
             /**
-             * Now with Sampel
+             * Now with Sampel.
              */
             $sampel = new Sampel();
             $date = \DateTime::createFromFormat('j/m/y', $request->get('sampel_tanggal_pengambilan'));
@@ -61,7 +57,7 @@ class TransactCreateController extends Controller
             $manager->persist($sampel);
             $manager->flush();
 
-            $kodeLab = $lab->getKodeLab() . '-00' .$sampel->getId();
+            $kodeLab = $lab->getKodeLab().'-00'.$sampel->getId();
 
             $sampel->setKodeSampel($kodeLab);
 
@@ -69,20 +65,20 @@ class TransactCreateController extends Controller
             $manager->flush();
 
             /**
-             * Last is Transact
+             * Last is Transact.
              */
             $transact = new Transaksi();
 
             $transact->setBiaya($request->get('biaya'));
             $dateHasil = \DateTime::createFromFormat('j/m/y', $request->get('tanggal_pengambilan_hasil'));
             $transact->setTanggalPengambilanHasil($dateHasil);
-            $transact->setIdSampel($sampel);
-            $transact->setIdPelanggan($pelanggan);
+            $transact->setSampel($sampel);
+            $transact->setPelanggan($pelanggan);
 
             $manager->persist($transact);
             $manager->flush();
 
-            return new JsonResponse(Debug::dump($transact));
+            return $this->redirectToRoute('medical_transact_list');
         }
 
         return $this->render('AppBundle:transaksi:form.html.twig', [
