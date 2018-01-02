@@ -43,8 +43,8 @@ Directory Listing
 .
 app
 └─ Resource
-|    └─ views
-|         └─ default -> Containt Base Layout
+     └─ views
+          └─ default -> Containt Base Layout
 ...
 src
 └─ AppBundle
@@ -52,5 +52,15 @@ src
     └─ Entity || MODEL
     └─ Form || FORM
     └─ Resource
-        └─ config -> 
+        └─ config
+            └─ doctrine  || DB TABLE CONFIG
+            ...
+        └─ routing || ROUTING
+        └─ views || VIEW per PAGE
+...
+web
+└─ app.php || Front-Controller
+...
+composer.json || Composer init required library
+...
 ```
