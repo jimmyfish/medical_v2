@@ -2,3 +2,8 @@ medical_hasil_create:
   path: /create
   defaults:
     _controller: AppBundle:Hasil/HasilCreate:index
+
+medical_hasil_list:
+  path: /
+  defaults:
+    _controller: AppBundle:Hasil/HasilList:index

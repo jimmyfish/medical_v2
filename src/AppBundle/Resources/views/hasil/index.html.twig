@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Daftar Hasil{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Daftar Hasil</h3>
+            </div>
+            <div class="block-content block-content-full">
+                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                    <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Kode Sampel</th>
+                        <th>Satuan</th>
+                        <th>Parameter</th>
+                        <th>Metode Analisa</th>
+                        <th>Baku Mutu</th>
+                        <th>User</th>
+                        <th>Aksi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 1 %}
+                    {% for data in hasil %}
+                        <tr>
+                            <th>{{ i }}</th>
+                            <th>{{ data.transaksi.pelanggan.nama }}</th>
+                            <th>{{ data.transaksi.sampel.kodeSampel }}</th>
+                            <th>{{ data.satuan }}</th>
+                            <th>{{ data.parameter }}</th>
+                            <th>{{ data.metodeAnalisa }}</th>
+                            <th>{{ data.bakuMutu }}</th>
+                            <th>{{ data.user.name }}</th>
+                            <th>
+                                <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                            </th>
+                        </tr>
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
