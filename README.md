@@ -46,7 +46,7 @@ app
      └─ views
           └─ default -> Containt Base Layout
   ...
-  AppKernel -> Main Kernel of Application
+  AppKernel.php -> Main Kernel of Application
 ...
 src
 └─ AppBundle
