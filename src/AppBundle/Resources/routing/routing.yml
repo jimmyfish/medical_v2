@@ -26,3 +26,7 @@ medical_transact:
 medical_hasil:
   resource: 'hasil/routing.yml'
   prefix: /hasil
+
+medical_stp:
+  resource: 'stp/routing.yml'
+  prefix: /stp

@@ -13,7 +13,15 @@ class SampelType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('lokasiPengambilan')->add('alamat')->add('petugasPengambil')->add('tanggal')->add('kondisi')->add('jenisSampel')->add('parameter')->add('idLab');
+        $builder
+            ->add('lokasiPengambilan')
+            ->add('alamat')
+            ->add('petugasPengambil')
+            ->add('tanggal')
+            ->add('kondisi')
+            ->add('jenisSampel')
+            ->add('parameter')
+            ->add('idLab');
     }
 
     /**

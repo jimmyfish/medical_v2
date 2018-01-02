@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicons/favicon.png') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/favicons/favicon-192x192.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon-180x180.png') }}">
+    <link rel="stylesheet" href="{{ asset('assets/js/plugins/datatables/dataTables.bootstrap4.min.css') }}">
 
     {% block customCSS %}{% endblock %}
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.css') }}">
@@ -60,18 +61,19 @@
                         </a>
                         <ul class="list-inline mt-10">
                             <li class="list-inline-item">
-                                <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase" href="be_pages_generic_profile.html">{{ app.user.bagian }}</a>
+                                <p class="text-dual-primary-dark font-size-xs font-w600 text-uppercase mb-0">{{ app.user.name }}</p>
+                                <p class="font-size-xs"><span class="badge badge-primary">{{ app.user.bagian }}</span></p>
                             </li>
-                            <li class="list-inline-item">
-                                <a class="link-effect text-dual-primary-dark" data-toggle="layout" data-action="sidebar_style_inverse_toggle" href="javascript:void(0)">
-                                    <i class="si si-drop"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="link-effect text-dual-primary-dark" href="op_auth_signin.html">
-                                    <i class="si si-logout"></i>
-                                </a>
-                            </li>
+                            {#<li class="list-inline-item">#}
+                                {#<a class="link-effect text-dual-primary-dark" data-toggle="layout" data-action="sidebar_style_inverse_toggle" href="javascript:void(0)">#}
+                                    {#<i class="si si-drop"></i>#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li class="list-inline-item">#}
+                                {#<a class="link-effect text-dual-primary-dark" href="op_auth_signin.html">#}
+                                    {#<i class="si si-logout"></i>#}
+                                {#</a>#}
+                            {#</li>#}
                         </ul>
                     </div>
                 </div>
@@ -88,6 +90,9 @@
                         </li>
                         <li>
                             <a href="{{ path('medical_transact_list') }}"><i class="si si-docs"></i><span class="sidebar-mini-hide">Transaksi</span></a>
+                        </li>
+                        <li>
+                            <a href="{{ path('medical_stp_list') }}"><i class="si si-list"></i><span class="sidebar-mini-hide">STP</span></a>
                         </li>
 
 
@@ -223,6 +228,16 @@
 {% block pluginJS %}{% endblock %}
 <!-- Page JS Code -->
 <script src="{{ asset('assets/js/pages/be_pages_dashboard.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script>
+    jQuery('.table').dataTable({
+        pageLength: 20,
+        lengthMenu: [[10, 15, 20, 30], [10, 15, 20, 30]],
+        autoWidth: false
+    });
+</script>
+
 {% block customJS %}{% endblock %}
 </body>
 </html>

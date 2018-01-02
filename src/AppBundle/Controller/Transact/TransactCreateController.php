@@ -74,6 +74,7 @@ class TransactCreateController extends Controller
             $transact->setTanggalPengambilanHasil($dateHasil);
             $transact->setSampel($sampel);
             $transact->setPelanggan($pelanggan);
+            $transact->setUser($this->get('security.token_storage')->getToken()->getUser());
 
             $manager->persist($transact);
             $manager->flush();

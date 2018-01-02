@@ -8,6 +8,10 @@ AppBundle\Entity\Sampel:
             id: true
             generator:
                 strategy: AUTO
+    oneToOne:
+      transaksi:
+        targetEntity: Transaksi
+        mappedBy: sampel
     lifecycleCallbacks: {  }
     manyToOne:
       idLab:

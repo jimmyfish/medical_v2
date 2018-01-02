@@ -13,6 +13,17 @@ AppBundle\Entity\Hasil:
       joinColumn:
         name: transaksi
         referencedColumnName: id
+  manyToOne:
+    user:
+      targetEntity: User
+      joinColumn:
+        name: user
+        referencedColumnName: id
+    approvedBy:
+      targetEntity: User
+      joinColumn:
+        name: approved_by
+        referencedColumnName: id
   lifecycleCallbacks: {  }
   fields:
     satuan:

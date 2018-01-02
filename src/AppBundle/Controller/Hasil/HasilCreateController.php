@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: jimmy
  * Date: 30/12/17
- * Time: 21:56
+ * Time: 21:56.
  */
 
 namespace AppBundle\Controller\Hasil;
-
 
 use AppBundle\Entity\Hasil;
 use AppBundle\Form\HasilType;

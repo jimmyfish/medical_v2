@@ -240,4 +240,40 @@ class Hasil
     {
         $this->transaksi = $transaksi;
     }
+
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
+    private $approvedBy = null;
+
+    /**
+     * @return User
+     */
+    public function getApprovedBy()
+    {
+        return $this->approvedBy;
+    }
+
+    /**
+     * @param User $approvedBy
+     */
+    public function setApprovedBy(User $approvedBy)
+    {
+        $this->approvedBy = $approvedBy;
+    }
 }

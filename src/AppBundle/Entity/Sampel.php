@@ -186,4 +186,22 @@ class Sampel
     {
         $this->idLab = $idLab;
     }
+
+    private $transaksi;
+
+    /**
+     * @return mixed
+     */
+    public function getTransaksi()
+    {
+        return $this->transaksi;
+    }
+
+    /**
+     * @param mixed $transaksi
+     */
+    public function setTransaksi(Transaksi $transaksi)
+    {
+        $this->transaksi = $transaksi;
+    }
 }

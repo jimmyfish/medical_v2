@@ -12,6 +12,7 @@ AppBundle\Entity\Transaksi:
     oneToOne:
       sampel:
         targetEntity: Sampel
+        inversedBy: transaksi
         joinColumn:
           name: sampel
           referencedColumnName: id
@@ -23,6 +24,11 @@ AppBundle\Entity\Transaksi:
         targetEntity: Pelanggan
         joinColumn:
           name: pelanggan
+          referencedColumnName: id
+      user:
+        targetEntity: User
+        joinColumn:
+          name: user
           referencedColumnName: id
     fields:
       biaya:
