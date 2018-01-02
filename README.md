@@ -47,7 +47,6 @@ app
           └─ default -> Containt Base Layout
   ...
   AppKernel -> Main Kernel of Application
-  
 ...
 src
 └─ AppBundle
@@ -60,11 +59,9 @@ src
             ...
         └─ routing -> ROUTING
         └─ views -> VIEW per PAGE
-        
 ...
 web
 └─ app.php -> Front-Controller
-
 ...
 composer.json -> Composer init required library
 ...
