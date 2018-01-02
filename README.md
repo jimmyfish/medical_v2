@@ -48,19 +48,19 @@ app
 ...
 src
 └─ AppBundle
-    └─ Controller || CONTROLLER
-    └─ Entity || MODEL
-    └─ Form || FORM
+    └─ Controller -> CONTROLLER
+    └─ Entity -> MODEL
+    └─ Form -> FORM
     └─ Resource
         └─ config
-            └─ doctrine  || DB TABLE CONFIG
+            └─ doctrine  -> DB TABLE CONFIG
             ...
-        └─ routing || ROUTING
-        └─ views || VIEW per PAGE
+        └─ routing -> ROUTING
+        └─ views -> VIEW per PAGE
 ...
 web
-└─ app.php || Front-Controller
+└─ app.php -> Front-Controller
 ...
-composer.json || Composer init required library
+composer.json -> Composer init required library
 ...
 ```
