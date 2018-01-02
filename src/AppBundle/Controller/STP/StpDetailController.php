@@ -9,10 +9,8 @@
 namespace AppBundle\Controller\STP;
 
 use AppBundle\Entity\Transaksi;
-use Doctrine\Common\Util\Debug;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class StpDetailController extends Controller
 {

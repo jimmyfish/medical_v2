@@ -35,15 +35,17 @@ class HasilType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-            ])
-            ->add('transaksi', EntityType::class, [
-                'class' => 'AppBundle:Transaksi',
-                'choice_label' => 'sampel.kodeSampel',
-                'label' => 'Kode Sampel',
-                'attr' => [
-                    'class' => 'form-control',
-                ],
             ]);
+//            ->add('transaksi', EntityType::class, [
+//                'class' => 'AppBundle:Transaksi',
+//                'choice_label' => 'sampel.kodeSampel',
+//                'choice_value' => 'sampel.kodeSampel',
+//                'label' => 'Kode Sampel',
+//                'attr' => [
+//                    'class' => 'form-control',
+//                ],
+//                'placeholder' => 'Pilih kode sampel',
+//            ]);
     }
 
     /**

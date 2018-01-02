@@ -42,7 +42,12 @@ AppBundle\Entity\Hasil:
       name: baku_mutu
     keterangan:
       type: text
+      nullable: true
     alasan:
       type: text
+      nullable: true
     isApproved:
       type: integer
+  uniqueConstraints:
+    event_user_idx:
+      columns: transaksi
