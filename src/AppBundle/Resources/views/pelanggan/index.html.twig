@@ -28,13 +28,13 @@
                     {% set i = 1 %}
                     {% for data in pelanggan %}
                         <tr>
-                            <th>{{ i }}</th>
-                            <th>{{ data.nama }}</th>
-                            <th>{{ data.alamat }}</th>
-                            <th>{{ data.telepon }}</th>
-                            <th>
+                            <td>{{ i }}</td>
+                            <td>{{ data.nama }}</td>
+                            <td>{{ data.alamat }}</td>
+                            <td>{{ data.telepon }}</td>
+                            <td>
                                 <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
-                            </th>
+                            </td>
                         </tr>
                         {% set i = i + 1 %}
                     {% endfor %}

@@ -27,17 +27,17 @@
                     {% set i = 1 %}
                     {% for data in hasil %}
                         <tr>
-                            <th>{{ i }}</th>
-                            <th>{{ data.transaksi.pelanggan.nama }}</th>
-                            <th>{{ data.transaksi.sampel.kodeSampel }}</th>
-                            <th>{{ data.satuan }}</th>
-                            <th>{{ data.parameter }}</th>
-                            <th>{{ data.metodeAnalisa }}</th>
-                            <th>{{ data.bakuMutu }}</th>
-                            <th>{{ data.user.name }}</th>
-                            <th>
+                            <td>{{ i }}</td>
+                            <td>{{ data.transaksi.pelanggan.nama }}</td>
+                            <td>{{ data.transaksi.sampel.kodeSampel }}</td>
+                            <td>{{ data.satuan }}</td>
+                            <td>{{ data.parameter }}</td>
+                            <td>{{ data.metodeAnalisa }}</td>
+                            <td>{{ data.bakuMutu }}</td>
+                            <td>{{ data.user.name }}</td>
+                            <td>
                                 <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
-                            </th>
+                            </td>
                         </tr>
                         {% set i = i + 1 %}
                     {% endfor %}

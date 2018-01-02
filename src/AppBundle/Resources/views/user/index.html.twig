@@ -27,12 +27,12 @@
                     {% set i = 1 %}
                     {% for data in user %}
                         <tr>
-                            <th>{{ i }}</th>
-                            <th>{{ data.name }}</th>
-                            <th>{{ data.email }}</th>
-                            <th>
+                            <td>{{ i }}</td>
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.email }}</td>
+                            <td>
                                 <a href="{{ path('medical_user_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
-                            </th>
+                            </td>
                         </tr>
                         {% set i = i + 1 %}
                     {% endfor %}

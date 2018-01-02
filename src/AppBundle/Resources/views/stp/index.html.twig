@@ -22,14 +22,14 @@
                     {% set i = 1 %}
                     {% for data in transaksi %}
                         <tr>
-                            <th>{{ i }}</th>
-                            <th>{{ data.pelanggan.nama }}</th>
-                            <th>{{ data.sampel.kodeSampel }}</th>
-                            <th>
+                            <td>{{ i }}</td>
+                            <td>{{ data.pelanggan.nama }}</td>
+                            <td>{{ data.sampel.kodeSampel }}</td>
+                            <td>
                                 <a href="{{ path('medical_stp_detail', {id: data.id}) }}" target="_blank">
                                     <i class="fa fa-file-text-o"></i>
                                 </a>
-                            </th>
+                            </td>
                         </tr>
                         {% set i = i + 1 %}
                     {% endfor %}

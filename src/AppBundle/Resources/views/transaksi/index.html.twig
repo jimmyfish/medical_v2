@@ -28,10 +28,10 @@
                             {% set i = 1 %}
                             {% for data in transaksi %}
                                 <tr>
-                                    <th>{{ i }}</th>
-                                    <th>{{ data.sampel.kodeSampel }}</th>
-                                    <th>{{ data.pelanggan.nama }}</th>
-                                    <th>
+                                    <td>{{ i }}</td>
+                                    <td>{{ data.sampel.kodeSampel }}</td>
+                                    <td>{{ data.pelanggan.nama }}</td>
+                                    <td>
                                         {% if data.hasil is null %}
                                             <a href="{{ path('medical_hasil_create', {'sampel_id': data.id}) }}">Kosong</a>
                                             {% else %}
@@ -41,10 +41,10 @@
                                                     <span class="badge badge-warning">Not Approved</span>
                                                 {% endif %}
                                         {% endif %}
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                         <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
-                                    </th>
+                                    </td>
                                 </tr>
                                 {% set i = i + 1 %}
                             {% endfor %}
