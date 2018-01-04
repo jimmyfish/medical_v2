@@ -36,7 +36,8 @@
                             <td>{{ data.bakuMutu }}</td>
                             <td>{{ data.user.name }}</td>
                             <td>
-                                <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                                <a href="#"><i class="fa fa-check"></i></a>
+                                <a href="#" id="refuse-{{ data.id }}" data-id="{{ data.id }}" class="text-danger" data-toggle="modal" data-target="#modal-refuse"><i class="fa fa-close"></i></a>
                             </td>
                         </tr>
                         {% set i = i + 1 %}
@@ -46,4 +47,51 @@
             </div>
         </div>
     </div>
+    <div id="modal-container">
+        <div class="modal fade" id="modal-refuse" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-popin" role="document">
+                <div class="modal-content">
+                    <form action="{{ path('medical_hasil_refuse') }}" method="post">
+                        <div class="block block-themed block-transparent mb-0">
+                            <div class="block-header bg-primary-dark">
+                                <h3 class="block-title">Terms &amp; Conditions</h3>
+                                <div class="block-options">
+                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                        <i class="si si-close"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <input type="hidden" name="hasil_id" id="hasil_id">
+                                <div class="form-group">
+                                    <label for="alasan">Alasan ditolak</label>
+                                    <textarea name="alasan" id="alasan" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-alt-danger">
+                                <i class="fa fa-close"></i> Tolak
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block customJS %}
+    <script>
+        $(function () {
+            $('[id^=refuse]').click(function () {
+                var hasilId = $(this).attr('data-id'),
+                    modalTarget = $(this).attr('data-target'),
+                    modalContainer = $('#modal-container').find(modalTarget);
+
+                modalContainer.find('#hasil_id').val(hasilId);
+            });
+        });
+    </script>
 {% endblock %}

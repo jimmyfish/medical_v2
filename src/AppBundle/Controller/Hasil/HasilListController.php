@@ -16,7 +16,9 @@ class HasilListController extends Controller
 {
     public function indexAction()
     {
-        $hasil = $this->getDoctrine()->getRepository(Hasil::class)->findAll();
+        $hasil = $this->getDoctrine()->getRepository(Hasil::class)->findBy([
+            'isApproved' => null,
+        ]);
 
         return $this->render('AppBundle:hasil:index.html.twig', [
             'hasil' => $hasil,

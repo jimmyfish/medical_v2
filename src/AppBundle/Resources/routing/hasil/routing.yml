@@ -7,3 +7,9 @@ medical_hasil_list:
   path: /
   defaults:
     _controller: AppBundle:Hasil/HasilList:index
+
+medical_hasil_refuse:
+  path: /refuse
+  defaults:
+    _controller: AppBundle:Hasil/HasilApproval:refuse
+  methods: POST

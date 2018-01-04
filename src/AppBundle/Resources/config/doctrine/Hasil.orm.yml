@@ -48,6 +48,7 @@ AppBundle\Entity\Hasil:
       nullable: true
     isApproved:
       type: integer
+      nullable: true
   uniqueConstraints:
     event_user_idx:
       columns: transaksi
