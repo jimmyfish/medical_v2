@@ -4,12 +4,33 @@ medical_hasil_create:
     _controller: AppBundle:Hasil/HasilCreate:index
 
 medical_hasil_list:
-  path: /
+  path: /list
   defaults:
     _controller: AppBundle:Hasil/HasilList:index
+
+medical_hasil_refusal:
+  path: /refusal
+  defaults:
+    _controller: AppBundle:Hasil/HasilListAnalis:index
+
+medical_hasil_approved:
+  path: /approved
+  defaults:
+    _controller: AppBundle:Hasil/HasilListAnalis:approved
+
+medical_hasil_pending:
+  path: /pending
+  defaults:
+    _controller: AppBundle:Hasil/HasilListAnalis:pending
 
 medical_hasil_refuse:
   path: /refuse
   defaults:
     _controller: AppBundle:Hasil/HasilApproval:refuse
   methods: POST
+
+medical_hasil_approve:
+  path: /approve/{hasil_id}
+  defaults:
+    _controller: AppBundle:Hasil/HasilApproval:approve
+  methods: GET

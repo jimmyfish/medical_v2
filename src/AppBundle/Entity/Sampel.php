@@ -204,4 +204,22 @@ class Sampel
     {
         $this->transaksi = $transaksi;
     }
+
+    private $metodePengambilan;
+
+    /**
+     * @return mixed
+     */
+    public function getMetodePengambilan()
+    {
+        return $this->metodePengambilan;
+    }
+
+    /**
+     * @param mixed $metodePengambilan
+     */
+    public function setMetodePengambilan($metodePengambilan)
+    {
+        $this->metodePengambilan = $metodePengambilan;
+    }
 }

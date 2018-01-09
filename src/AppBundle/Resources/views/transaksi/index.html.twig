@@ -43,7 +43,13 @@
                                         {% endif %}
                                     </td>
                                     <td>
-                                        <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                                        <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a> &nbsp;
+                                        <a href="{{ path('medical_print_bukti_pembayaran', {id: data.id}) }}" target="_blank"><i class="fa fa-dollar"></i></a> &nbsp;
+                                        {% if data.hasil is not null %}
+                                            {% if data.hasil.isApproved == 1 %}
+                                                <a href="{{ path('medical_print_cert', {id: data.id}) }}"><i class="fa fa-print"></i></a>
+                                            {% endif %}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 {% set i = i + 1 %}

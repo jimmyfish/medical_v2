@@ -20986,3 +20986,42 @@ div.tagsinput span.tag a:hover {
   display:none;
   visibility: hidden;
 }
+
+.table-print th {
+  font-weight: normal;
+}
+
+.table-print {
+  font-size: 18px;
+  font-family: "serif";
+}
+
+.table-print .text-16 {
+  font-size: 16px;
+}
+
+.table-print .borderize {
+  border: 2px solid #000;
+  padding: 5px 50px 5px 15px;
+}
+
+.no-padding td {
+  padding: 0;
+}
+
+.no-tb-padding td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.no-t-padding td {
+    padding-top: 0;
+}
+
+.no-b-padding td {
+    padding-top: 0;
+}
+
+.print-cert {
+  font-family: "serif";
+}

@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" media="print" href="{{ asset('assets/css/codebase.css') }}">
+    <style type="text/css">
+        @media print {
+            .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+            .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+            .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
+            .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
+            .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
+            .col-xl-auto {
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <main id="main-container">
+        <!-- Page Content -->
+        <div class="content">
+
+            <div class="block">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title"></h3>
+                    <div class="block-options">
+                        <!-- Print Page functionality is initialized in Codebase() -> uiHelperPrint() -->
+                        <button type="button" class="btn-block-option" onclick="Codebase.helpers('print-page');">
+                            <i class="si si-printer"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="block-content print-cert">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {#<img class="img-responsive" src="{{ asset('assets/img/header/header_stp.png') }}" alt="">#}
+                            <h2 class="text-center">SERTIFIKAT</h2>
+                            <h4 class="text-center"><i>(CERTIFICATE)</i></h4>
+                            <p class="text-center">NOMOR : {{ data.sampel.kodeSampel }}/LABKES-MLG/{{ "now"|date('Y') }}</p>
+                            <p>&nbsp;</p>
+                            <div class="col-md-10">
+                                <h5>
+                                    <strong>
+                                        <u>
+                                            IDENTITAS PELANGGAN <i>(Client's Identity)</i>
+                                        </u>
+                                    </strong>
+                                </h5>
+                                <table class="table table-borderless no-t-padding">
+                                    <tr>
+                                        <td>Nama <i>(Name)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.pelanggan.nama }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat <i>(Address)</i> / Telepon <i>(Phone Number)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.pelanggan.alamat }}</td>
+                                    </tr>
+                                </table>
+                                {# ----- #}
+                                <p>&nbsp;</p>
+                                <h5>
+                                    <strong>
+                                        <u>
+                                            IDENTITAS SAMPEL <i>(Sample Identity)</i>
+                                        </u>
+                                    </strong>
+                                </h5>
+                                <table class="table table-borderless no-t-padding">
+                                    <tr>
+                                        <td>Kode Sampel <i>(Sample Code)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.kodeSampel }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Sampel <i>(Type of Sample)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.jenisSampel}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lokasi Pengambilan <i>(Sampling Location)</i></td>
+                                        <td>:</td>
+                                        <td>BBG</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat <i>(Address)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.alamat }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Petugas Pengambil <i>(Done By)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.petugasPengambil }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Waktu Pengambilan <i>(Time of Sampling)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.tanggalPengambilanHasil|date('d-m-Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Waktu Penerimaan <i>(Receiving on)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.tanggalPengambilanHasil|date('d-m-Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kondisi Sampel<i>(Sample Condition)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.kondisi }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Metode Pengambilan <i>(Sampling Method)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.metodePengambilan }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tanggal Analisa <i>(Analyzed on)</i></td>
+                                        <td>:</td>
+                                        <td>{{ data.sampel.tanggal|date('d-m-Y') }}</td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-12">
+                                {# ---- #}
+                                <p>&nbsp;</p>
+                                <h5>
+                                    <strong>
+                                        <u>
+                                            HASIL ANALISA <i>(Result of Analysis)</i>
+                                        </u>
+                                    </strong>
+                                </h5>
+                                <table class="table table-bordered thead-default">
+                                    <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>NAMA</th>
+                                        <th class="text-center">Hasil Uji</th>
+                                        <th class="text-center">Baku Mutu</th>
+                                        <th class="text-center">Metode Analisa</th>
+                                        <th class="text-center">Keterangan</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{ data.pelanggan.nama }}, {{ data.pelanggan.alamat }}</td>
+                                        <td class="text-center">#</td>
+                                        <td class="text-center">{{ data.hasil.bakuMutu }}</td>
+                                        <td class="text-center">{{ data.hasil.metodeAnalisa }}</td>
+                                        <td class="text-center">{{ data.hasil.keterangan }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless no-padding">
+                                    <tbody>
+                                    <tr>
+                                        <td>*) Standar Baku Mutu sesuai dengan</td>
+                                        <td>:&nbsp;&nbsp;&nbsp;</td>
+                                        <td>Menurut Peraturan Menteri Kesehatan Republik Indonesia Nomor :</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Threshold Value Fully adopted from</i></td>
+                                        <td>&nbsp;</td>
+                                        <td>1096/MENKES/PER/VI/2011 tentang Higiene Sanitasi Jasa Boga</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+
+                                    </tr>
+                                    <tr style="padding: 20px">
+                                        <td># = Tidak diperiksa</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">&nbsp;</div>
+                        <div class="col-md-4">
+                            <table class="table table-borderless no-padding">
+                                <tbody>
+                                <tr>
+                                    <td>Malang, {{ "now"|date('d M Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KEPALA UPT</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LABORATORIUM KESEHATAN</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><i>Deputi Manajer Puncak</i></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>
+                                            <i>
+                                                <u>
+                                                    AGUS WIDODO, SKM, M.MKes
+                                                </u>
+                                            </i>
+                                        </strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Pembina</td>
+                                </tr>
+                                <tr>
+                                    <td>NIP. 19710407 199303 1 007</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Invoice -->
+        </div>
+        <!-- END Page Content -->
+    </main>
+{% endblock %}

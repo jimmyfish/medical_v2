@@ -49,7 +49,7 @@ class HasilCreateController extends Controller
             $manager->persist($data);
             $manager->flush();
 
-            return $this->redirectToRoute('medical_transaksi_list');
+            return $this->redirectToRoute('medical_hasil_list');
         }
 
         return $this->render('AppBundle:hasil:form.html.twig', [

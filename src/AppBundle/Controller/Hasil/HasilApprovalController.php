@@ -39,4 +39,26 @@ class HasilApprovalController extends Controller
 
         return 'GO AWAY';
     }
+
+    public function approveAction(Request $request)
+    {
+        $manager = $this->getDoctrine()->getManager();
+
+        $data = $manager->getRepository(Hasil::class)->find($request->get('hasil_id'));
+
+        if ($data instanceof Hasil) {
+            $data->setIsApproved(1);
+            $data->setApprovedBy($this->get('security.token_storage')->getToken()->getUser());
+
+            $manager->persist($data);
+
+            try {
+                $manager->flush();
+            } catch (\Exception $e) {
+
+            }
+
+            return $this->redirect($request->headers->get('referer'));
+        }
+    }
 }

@@ -53,6 +53,7 @@ class TransactCreateController extends Controller
             $sampel->setKondisi($request->get('sampel_kondisi'));
             $sampel->setJenisSampel($request->get('sampel_jenis'));
             $sampel->setParameter($request->get('sampel_parameter'));
+            $sampel->setMetodePengambilan($request->get('metode_pengambilan'));
 
             $manager->persist($sampel);
             $manager->flush();

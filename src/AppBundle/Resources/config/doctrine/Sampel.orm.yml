@@ -47,3 +47,6 @@ AppBundle\Entity\Sampel:
         type: string
         length: 100
         nullable: true
+      metodePengambilan:
+        type: string
+        length: 255

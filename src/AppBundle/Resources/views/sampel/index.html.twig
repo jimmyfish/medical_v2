@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Daftar Pelanggan{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Daftar Pelanggan</h3>
+                <div class="block-options">
+                    <a href="{{ path('medical_pelanggan_create') }}" class="btn btn-alt-primary">
+                        <i class="fa fa-plus"></i> Tambah
+                    </a>
+                </div>
+            </div>
+            <div class="block-content block-content-full">
+                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                    <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Kode Sampel</th>
+                        <th>Jenis Sampel</th>
+                        <th>Kondisi</th>
+                        <th>Metode Pengambilan</th>
+                        <th>Hasil</th>
+                        <th>Aksi</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set i = 1 %}
+                    {% for data in sampel %}
+                        <tr>
+                            <td>{{ i }}</td>
+                            <td>{{ data.kodeSampel }}</td>
+                            <td>{{ data.jenisSampel }}</td>
+                            <td>{{ data.kondisi }}</td>
+                            <td>{{ data.metodePengambilan }}</td>
+                            <td>
+                                {% if data.transaksi.hasil is not null %}
+                                    {% if (data.transaksi.hasil.isApproved == 0) %}
+                                        <span class="badge badge-danger">Ditolak</span>
+                                    {% elseif (data.transaksi.hasil.isApproved == 1) %}
+                                        <span class="badge badge-primary">Diterima</span>
+                                    {% elseif (data.transaksi.hasil.isApproved is null) %}
+                                        <span class="badge badge-info">Menunggu</span>
+                                    {% endif %}
+                                {% else %}
+                                        <a href="{{ path('medical_hasil_create', {sampel_id: data.id}) }}">Tidak ada</a>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

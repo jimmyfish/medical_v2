@@ -1,0 +1,14 @@
+medical_print_bukti_pembayaran:
+  path: /invoice/{id}
+  defaults:
+    _controller: AppBundle:Prints/PrintInvoice:index
+
+medical_print_cert:
+  path: /cert/{id}
+  defaults:
+    _controller: AppBundle:Prints/PrintCert:index
+
+medical_print_stp:
+  path: /stp/{id}
+  defaults:
+    _controller: AppBundle:Prints/PrintStp:index

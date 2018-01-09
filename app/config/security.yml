@@ -41,4 +41,14 @@ security:
     access_control:
         - { path: ^/auth/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/transaksi, roles: [ROLE_PELAYANAN, ROLE_ADMIN] }
+        - { path: ^/pelanggan, roles: [ROLE_PELAYANAN, ROLE_ADMIN] }
+        - { path: ^/sampel, roles: [ROLE_PELAYANAN, ROLE_ANALIS, ROLE_ADMIN]}
+        - { path: ^/hasil/list, roles: [ROLE_PELAYANAN, ROLE_MANAJER, ROLE_ADMIN] }
+        - { path: ^/hasil/pending, roles: [ROLE_PELAYANAN, ROLE_MANAJER, ROLE_ADMIN] }
+        - { path: ^/hasil/approved, roles: [ROLE_PELAYANAN, ROLE_MANAJER, ROLE_ANALIS, ROLE_ADMIN]}
+        - { path: ^/hasil/refusal, roles: [ROLE_PELAYANAN, ROLE_MANAJER, ROLE_ANALIS, ROLE_ADMIN]}
+        - { path: ^/lab, roles: [ROLE_ANALIS, ROLE_ADMIN]}
+        - { path: ^/stp, roles: [ROLE_MANAJER, ROLE_ADMIN]}
         - { path: ^/, roles: [ROLE_ADMIN, ROLE_MANAJER, ROLE_ANALIS, ROLE_PELAYANAN] }
+

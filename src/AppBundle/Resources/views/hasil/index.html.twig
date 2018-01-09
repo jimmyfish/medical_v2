@@ -36,8 +36,10 @@
                             <td>{{ data.bakuMutu }}</td>
                             <td>{{ data.user.name }}</td>
                             <td>
-                                <a href="#"><i class="fa fa-check"></i></a>
-                                <a href="#" id="refuse-{{ data.id }}" data-id="{{ data.id }}" class="text-danger" data-toggle="modal" data-target="#modal-refuse"><i class="fa fa-close"></i></a>
+                                {% if is_granted('ROLE_MANAJER') or is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('medical_hasil_approve', {hasil_id: data.id}) }}"><i class="fa fa-check"></i></a>
+                                    <a href="#" id="refuse-{{ data.id }}" data-id="{{ data.id }}" class="text-danger" data-toggle="modal" data-target="#modal-refuse"><i class="fa fa-close"></i></a>
+                                {% endif %}
                             </td>
                         </tr>
                         {% set i = i + 1 %}

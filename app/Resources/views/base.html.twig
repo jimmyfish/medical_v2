@@ -79,85 +79,56 @@
                 </div>
                 <div class="content-side content-side-full">
                     <ul class="nav-main">
-                        <li>
-                            <a href="{{ path('medical_lab_index') }}"><i class="si si-vector"></i><span class="sidebar-mini-hide">Laboratorium</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medical_pelanggan_index') }}"><i class="si si-users"></i><span class="sidebar-mini-hide">Pelanggan</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medical_user_list') }}"><i class="si si-user"></i><span class="sidebar-mini-hide">Pengguna</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medical_transact_list') }}"><i class="si si-docs"></i><span class="sidebar-mini-hide">Transaksi</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medical_stp_list') }}"><i class="si si-list"></i><span class="sidebar-mini-hide">STP</span></a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medical_hasil_list') }}"><i class="si si-calculator"></i><span class="sidebar-mini-hide">Hasil</span></a>
-                        </li>
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_ANALIS') %}
+                            <li>
+                                <a href="{{ path('medical_lab_index') }}"><i class="si si-vector"></i><span class="sidebar-mini-hide">Laboratorium</span></a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PELAYANAN') %}
+                            <li>
+                                <a href="{{ path('medical_pelanggan_index') }}"><i class="si si-users"></i><span class="sidebar-mini-hide">Pelanggan</span></a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('medical_user_list') }}"><i class="si si-user"></i><span class="sidebar-mini-hide">Pengguna</span></a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_PELAYANAN') or is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('medical_transact_list') }}"><i class="si si-docs"></i><span class="sidebar-mini-hide">Transaksi</span></a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_MANAJER') or is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('medical_stp_list') }}"><i class="si si-list"></i><span class="sidebar-mini-hide">STP</span></a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_PELAYANAN') or is_granted('ROLE_ANALIS') or is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('medical_sampel_list') }}"><i class="si si-chemistry"></i><span class="sidebar-mini-hide">Sampel</span></a>
+                            </li>
+                        {% endif %}
 
-
-                        {#<li>#}
-                            {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i><span class="sidebar-mini-hide">STS</span></a>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks_tiles.html">Tambah Sampel</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks.html">Daftar Sampel</a>#}
-                                {#</li>#}
-                            {#</ul>#}
-                        {#</li>#}
-                        {#<li class="">#}
-                            {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span class="sidebar-mini-hide">STR</span></a>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="{{ path('medical_pelanggan_create') }}">Tambah Pelanggan</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks.html">Daftar Pelanggan</a>#}
-                                {#</li>#}
-                            {#</ul>#}
-                        {#</li>#}
-                        {#<li class="">#}
-                            {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-calculator"></i><span class="sidebar-mini-hide">Hasil</span></a>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="{{ path('medical_hasil_create') }}">Tambah Hasil</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks.html">Daftar Hasil</a>#}
-                                {#</li>#}
-                            {#</ul>#}
-                        {#</li>#}
-                        {#<li class="hide">#}
-                            {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span class="sidebar-mini-hide">STR</span></a>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="{{ path('medical_pelanggan_create') }}">Tambah Pelanggan</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks.html">Daftar Pelanggan</a>#}
-                                {#</li>#}
-                            {#</ul>#}
-                        {#</li>#}
-                        {#<li class="hide">#}
-                            {#<a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span class="sidebar-mini-hide">Transaksi</span></a>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks.html">Tambah Transaksi</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks_tiles.html">Daftar Transaksi</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="be_blocks_draggable.html">Transaksi Lama</a>#}
-                                {#</li>#}
-                            {#</ul>#}
-                        {#</li>#}
-
+                        <li>
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-calculator"></i><span class="sidebar-mini-hide">Hasil</span></a>
+                            <ul>
+                                {% if is_granted('ROLE_PELAYANAN') or is_granted('ROLE_MANAJER') %}
+                                    <li>
+                                        <a href="{{ path('medical_hasil_list') }}">Semua Hasil</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('medical_hasil_pending') }}">Hasil Menunggu</a>
+                                    </li>
+                                {% endif %}
+                                <li>
+                                    <a href="{{ path('medical_hasil_approved') }}">Hasil Diterima</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('medical_hasil_refusal') }}">Hasil Ditolak</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

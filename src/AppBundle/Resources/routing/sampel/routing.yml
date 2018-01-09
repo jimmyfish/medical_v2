@@ -1,0 +1,4 @@
+medical_sampel_list:
+  path: /
+  defaults:
+    _controller: AppBundle:Sampel/SampelList:index

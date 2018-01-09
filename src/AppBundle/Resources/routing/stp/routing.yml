@@ -2,8 +2,3 @@ medical_stp_list:
   path: /
   defaults:
     _controller: AppBundle:STP/StpList:index
-
-medical_stp_detail:
-  path: /{id}
-  defaults:
-    _controller: AppBundle:STP/StpDetail:index

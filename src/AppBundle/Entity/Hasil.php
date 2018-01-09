@@ -169,7 +169,7 @@ class Hasil
         $this->idLab = $idLab;
     }
 
-    private $isApproved = 0;
+    private $isApproved = null;
 
     private $alasan;
 

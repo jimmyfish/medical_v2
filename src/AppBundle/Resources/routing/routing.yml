@@ -30,3 +30,10 @@ medical_hasil:
 medical_stp:
   resource: 'stp/routing.yml'
   prefix: /stp
+
+medical_sampel:
+  resource: 'sampel/routing.yml'
+  prefix: /sampel
+
+medical_print:
+  resource: 'print/routing.yml'
