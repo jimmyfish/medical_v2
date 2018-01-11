@@ -38,10 +38,12 @@
                                         {% if data.hasil is null %}
                                             <a href="{{ path('medical_hasil_create', {'sampel_id': data.id}) }}">Kosong</a>
                                             {% else %}
-                                                {% if (data.hasil.isApproved != 0) %}
-                                                    <span class="badge badge-success">Approved</span>
-                                                {% else %}
-                                                    <span class="badge badge-warning">Not Approved</span>
+                                                {% if (data.hasil.isApproved == null) %}
+                                                    <span class="badge badge-info">Menunggu</span>
+                                                {% elseif (data.hasil.isApproved == 0) %}
+                                                    <span class="badge badge-danger">Ditolak</span>
+                                                {% elseif (data.hasil.isApproved == 1) %}
+                                                    <span class="badge badge-success">Diterima</span>
                                                 {% endif %}
                                         {% endif %}
                                     </td>
