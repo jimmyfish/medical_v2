@@ -285,4 +285,14 @@ class User implements UserInterface, \Serializable
     {
         // TODO: Implement eraseCredentials() method.
     }
+
+    private $transaksi;
+
+    /**
+     * @return mixed
+     */
+    public function getTransaksi()
+    {
+        return $this->transaksi;
+    }
 }

@@ -8,6 +8,11 @@ AppBundle\Entity\User:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        transaksi:
+            targetEntity: Transaksi
+            mappedBy: user
+            cascade: ["remove"]
     lifecycleCallbacks: {  }
     fields:
       name:
