@@ -32,6 +32,7 @@
                             <td>{{ data.jenisLab }}</td>
                             <td>
                                 <a href="{{ path('medical_lab_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ path('medical_lab_delete', {id: data.id}) }}" class="text-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         {% set i = i + 1 %}
