@@ -20,6 +20,9 @@
                         <th>Metode Analisa</th>
                         <th>Baku Mutu</th>
                         <th>User</th>
+                        {% if is_granted('ROLE_ANALIS') %}
+                            <th>Alasan</th>
+                        {% endif %}
                         <th>Aksi</th>
                     </tr>
                     </thead>
@@ -35,10 +38,18 @@
                             <td>{{ data.metodeAnalisa }}</td>
                             <td>{{ data.bakuMutu }}</td>
                             <td>{{ data.user.name }}</td>
+                            {% if is_granted('ROLE_ANALIS') %}
+                                <td>{{ data.alasan }}</td>
+                            {% endif %}
                             <td>
                                 {% if is_granted('ROLE_MANAJER') or is_granted('ROLE_ADMIN') %}
-                                    <a href="{{ path('medical_hasil_approve', {hasil_id: data.id}) }}"><i class="fa fa-check"></i></a>
-                                    <a href="#" id="refuse-{{ data.id }}" data-id="{{ data.id }}" class="text-danger" data-toggle="modal" data-target="#modal-refuse"><i class="fa fa-close"></i></a>
+                                    <a href="{{ path('medical_hasil_approve', {hasil_id: data.id}) }}"><i
+                                                class="fa fa-check"></i></a>
+                                    <a href="#" id="refuse-{{ data.id }}" data-id="{{ data.id }}" class="text-danger"
+                                       data-toggle="modal" data-target="#modal-refuse"><i class="fa fa-close"></i></a>
+                                {% endif %}
+                                {% if is_granted('ROLE_ANALIS') %}
+                                    <a href="" class="text-info"><i class="fa fa-pencil"></i></a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -50,7 +61,8 @@
         </div>
     </div>
     <div id="modal-container">
-        <div class="modal fade" id="modal-refuse" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
+        <div class="modal fade" id="modal-refuse" tabindex="-1" role="dialog" aria-labelledby="modal-popin"
+             aria-hidden="true">
             <div class="modal-dialog modal-dialog-popin" role="document">
                 <div class="modal-content">
                     <form action="{{ path('medical_hasil_refuse') }}" method="post">
@@ -58,7 +70,8 @@
                             <div class="block-header bg-primary-dark">
                                 <h3 class="block-title">Terms &amp; Conditions</h3>
                                 <div class="block-options">
-                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="btn-block-option" data-dismiss="modal"
+                                            aria-label="Close">
                                         <i class="si si-close"></i>
                                     </button>
                                 </div>

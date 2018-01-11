@@ -30,16 +30,18 @@
                             <td>{{ data.kondisi }}</td>
                             <td>{{ data.metodePengambilan }}</td>
                             <td>
-                                {% if data.transaksi.hasil is not null %}
-                                    {% if (data.transaksi.hasil.isApproved == null) %}
-                                        <span class="badge badge-info">Menunggu</span>
-                                    {% elseif (data.transaksi.hasil.isApproved == 0) %}
-                                        <span class="badge badge-danger">Ditolak</span>
-                                    {% elseif (data.transaksi.hasil.isApproved == 1) %}
-                                        <span class="badge badge-success">Diterima</span>
-                                    {% endif %}
-                                {% else %}
+                                {% if data is not null %}
+                                    {% if data.transaksi.hasil is not null %}
+                                        {% if (data.transaksi.hasil.isApproved == null) %}
+                                            <span class="badge badge-info">Menunggu</span>
+                                        {% elseif (data.transaksi.hasil.isApproved == 0) %}
+                                            <span class="badge badge-danger">Ditolak</span>
+                                        {% elseif (data.transaksi.hasil.isApproved == 1) %}
+                                            <span class="badge badge-success">Diterima</span>
+                                        {% endif %}
+                                    {% else %}
                                         <a href="{{ path('medical_hasil_create', {sampel_id: data.id}) }}">Tidak ada</a>
+                                    {% endif %}
                                 {% endif %}
                             </td>
                         </tr>

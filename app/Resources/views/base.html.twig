@@ -112,7 +112,7 @@
                         <li>
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-calculator"></i><span class="sidebar-mini-hide">Hasil</span></a>
                             <ul>
-                                {% if is_granted('ROLE_PELAYANAN') or is_granted('ROLE_MANAJER') %}
+                                {% if is_granted('ROLE_PELAYANAN') or is_granted('ROLE_MANAJER') or is_granted('ROLE_ADMIN') %}
                                     <li>
                                         <a href="{{ path('medical_hasil_list') }}">Semua Hasil</a>
                                     </li>
