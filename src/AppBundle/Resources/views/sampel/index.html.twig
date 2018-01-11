@@ -30,7 +30,7 @@
                             <td>{{ data.kondisi }}</td>
                             <td>{{ data.metodePengambilan }}</td>
                             <td>
-                                {% if data is not null %}
+                                {% if data.transaksi is not null %}
                                     {% if data.transaksi.hasil is not null %}
                                         {% if (data.transaksi.hasil.isApproved == null) %}
                                             <span class="badge badge-info">Menunggu</span>
