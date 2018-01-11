@@ -23,12 +23,14 @@ class TransactDeleteController extends Controller
 //
 //		    if ($sampel instanceof Sampel) {
 //		        $manager->remove($sampel);
+//                $manager->flush();
 //            }
 //
 //            $pelanggan = $manager->getRepository(Pelanggan::class)->find($data->getPelanggan()->getId());
 //
 //            if ($pelanggan instanceof Pelanggan) {
 //                $manager->remove($pelanggan);
+//                $manager->flush();
 //            }
 //
 //            if ($data->getHasil() != null) {
@@ -36,8 +38,10 @@ class TransactDeleteController extends Controller
 //
 //                if ($hasil instanceof Hasil) {
 //                    $manager->remove($hasil);
+//                    $manager->flush();
 //                }
 //            }
+
             $manager->remove($data);
 
             $manager->flush();

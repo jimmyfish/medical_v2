@@ -12,6 +12,7 @@ AppBundle\Entity\Sampel:
       transaksi:
         targetEntity: Transaksi
         mappedBy: sampel
+        cascade: ["remove"]
     lifecycleCallbacks: {  }
     manyToOne:
       idLab:

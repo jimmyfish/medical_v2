@@ -13,20 +13,21 @@ AppBundle\Entity\Transaksi:
       sampel:
         targetEntity: Sampel
         inversedBy: transaksi
+        cascade: ["remove"]
         joinColumn:
           name: sampel
           referencedColumnName: id
-          onDelete: CASCADE
       hasil:
         targetEntity: Hasil
         mappedBy: transaksi
+        cascade: ["remove"]
     manyToOne:
       pelanggan:
         targetEntity: Pelanggan
+        cascade: ["remove"]
         joinColumn:
           name: pelanggan
           referencedColumnName: id
-          onDelete: CASCADE
       user:
         targetEntity: User
         joinColumn:
