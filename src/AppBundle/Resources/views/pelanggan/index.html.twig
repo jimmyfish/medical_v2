@@ -7,11 +7,6 @@
         <div class="block">
             <div class="block-header block-header-default">
                 <h3 class="block-title">Daftar Pelanggan</h3>
-                <div class="block-options">
-                    <a href="{{ path('medical_pelanggan_create') }}" class="btn btn-alt-primary">
-                        <i class="fa fa-plus"></i> Tambah
-                    </a>
-                </div>
             </div>
             <div class="block-content block-content-full">
                 <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
@@ -21,7 +16,6 @@
                         <th>Nama</th>
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
-                        <th>Aksi</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -32,9 +26,6 @@
                             <td>{{ data.nama }}</td>
                             <td>{{ data.alamat }}</td>
                             <td>{{ data.telepon }}</td>
-                            <td>
-                                <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a>
-                            </td>
                         </tr>
                         {% set i = i + 1 %}
                     {% endfor %}

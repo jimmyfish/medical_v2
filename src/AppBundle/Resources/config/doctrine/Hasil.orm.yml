@@ -13,6 +13,7 @@ AppBundle\Entity\Hasil:
       joinColumn:
         name: transaksi
         referencedColumnName: id
+        onDelete: CASCADE
   manyToOne:
     user:
       targetEntity: User

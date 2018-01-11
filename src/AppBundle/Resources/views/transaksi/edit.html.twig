@@ -26,79 +26,79 @@
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="biaya">Biaya :</label>
-                                    <input type="text" name="biaya" id="biaya" class="form-control">
+                                    <input type="text" name="biaya" id="biaya" class="form-control" value="{{ info.data.biaya }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="tanggal_pengambilan_hasil">Tanggal Pengambilan Hasil :</label>
-                                    <input type="text" class="js-datepicker form-control" id="tanggal_pengambilan_hasil" name="tanggal_pengambilan_hasil" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                    <input type="text" class="js-datepicker form-control" id="tanggal_pengambilan_hasil" name="tanggal_pengambilan_hasil" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy" value="{{ info.data.tanggalPengambilanHasil|date('d/m/y') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="pelanggan_name">Nama Pelanggan :</label>
-                                    <input type="text" name="pelanggan_name" id="pelanggan_name" class="form-control">
+                                    <input type="text" name="pelanggan_name" id="pelanggan_name" class="form-control" value="{{ info.data.pelanggan.nama }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="pelanggan_address">Alamat Pelanggan :</label>
-                                    <textarea name="pelanggan_address" id="pelanggan_address" class="form-control"></textarea>
+                                    <textarea name="pelanggan_address" id="pelanggan_address" class="form-control">{{ info.data.pelanggan.alamat }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="pelanggan_telepon">Telepon :</label>
-                                    <input type="text" name="pelanggan_telepon" id="pelanggan_telepon" class="form-control">
+                                    <input type="text" name="pelanggan_telepon" id="pelanggan_telepon" class="form-control" value="{{ info.data.pelanggan.telepon }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_lokasi">Lokasi Pengambilan :</label>
-                                    <input type="text" name="sampel_lokasi" id="sampel_lokasi" class="form-control">
+                                    <input type="text" name="sampel_lokasi" id="sampel_lokasi" class="form-control" value="{{ info.data.sampel.lokasiPengambilan }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_alamat_lokasi">Alamat Pengambilan :</label>
-                                    <input type="text" name="sampel_alamat_lokasi" id="sampel_alamat_lokasi" class="form-control">
+                                    <input type="text" name="sampel_alamat_lokasi" id="sampel_alamat_lokasi" class="form-control" value="{{ info.data.sampel.alamat }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_petugas">Petugas Pengambilan :</label>
-                                    <input type="text" name="sampel_petugas" id="sampel_petugas" class="form-control">
+                                    <input type="text" name="sampel_petugas" id="sampel_petugas" class="form-control" value="{{ info.data.sampel.petugasPengambil }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_tanggal_pengambilan">Tanggal Pengambilan Sampel:</label>
-                                    <input type="text" class="js-datepicker form-control" id="sampel_tanggal_pengambilan" name="sampel_tanggal_pengambilan" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy">
+                                    <input type="text" class="js-datepicker form-control" id="sampel_tanggal_pengambilan" name="sampel_tanggal_pengambilan" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="dd/mm/yy" placeholder="dd/mm/yy" value="{{ info.data.sampel.tanggal|date('d/m/y') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_kondisi">Kondisi :</label>
-                                    <input type="text" name="sampel_kondisi" id="sampel_kondisi" class="form-control">
+                                    <input type="text" name="sampel_kondisi" id="sampel_kondisi" class="form-control" value="{{ info.data.sampel.kondisi }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_jenis">Jenis Sampel :</label>
-                                    <input type="text" name="sampel_jenis" id="sampel_jenis" class="form-control">
+                                    <input type="text" name="sampel_jenis" id="sampel_jenis" class="form-control" value="{{ info.data.sampel.jenisSampel }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="metode_pengambilan">Metode Pengambilan :</label>
-                                    <input type="text" name="metode_pengambilan" id="metode_pengambilan" class="form-control">
+                                    <input type="text" name="metode_pengambilan" id="metode_pengambilan" class="form-control" value="{{ info.data.sampel.metodePengambilan }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="sampel_parameter">Parameter :</label>
-                                    <input type="text" name="sampel_parameter" id="sampel_parameter" class="form-control">
+                                    <input type="text" name="sampel_parameter" id="sampel_parameter" class="form-control" value="{{ info.data.sampel.parameter }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -106,7 +106,7 @@
                                     <label for="lab_id">Laboratorium :</label>
                                     <select name="lab_id" id="lab_id" class="form-control">
                                         {% for data in info.lab %}
-                                            <option value="{{ data.id }}">{{ data.namaLab }}</option>
+                                            <option value="{{ data.id }}" {% if data.id == info.data.sampel.idLab.id %}selected{% endif %}>{{ data.namaLab }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>

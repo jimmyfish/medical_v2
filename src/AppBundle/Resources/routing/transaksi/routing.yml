@@ -13,3 +13,8 @@ medical_transact_delete:
   defaults:
       _controller: AppBundle:Transact/TransactDelete:index
   methods: GET
+
+medical_transact_edit:
+  path: /edit/{id}
+  defaults:
+    _controller: AppBundle:Transact/TransactEdit:index

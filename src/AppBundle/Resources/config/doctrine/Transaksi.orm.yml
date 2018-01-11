@@ -16,6 +16,7 @@ AppBundle\Entity\Transaksi:
         joinColumn:
           name: sampel
           referencedColumnName: id
+          onDelete: CASCADE
       hasil:
         targetEntity: Hasil
         mappedBy: transaksi
@@ -25,6 +26,7 @@ AppBundle\Entity\Transaksi:
         joinColumn:
           name: pelanggan
           referencedColumnName: id
+          onDelete: CASCADE
       user:
         targetEntity: User
         joinColumn:

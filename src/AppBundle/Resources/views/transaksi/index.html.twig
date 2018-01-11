@@ -14,6 +14,9 @@
                         </div>
                     </div>
                     <div class="block-content block-content-full">
+                        {% for msg in app.session.getFlashBag().get('message_success') %}
+                            <p class="p-10 bg-success text-white">{{ msg }}</p>
+                        {% endfor %}
                         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                             <thead>
                             <tr>
@@ -43,7 +46,7 @@
                                         {% endif %}
                                     </td>
                                     <td>
-                                        <a href="{{ path('medical_pelanggan_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a> &nbsp;
+                                        <a href="{{ path('medical_transact_edit', {id: data.id}) }}"><i class="fa fa-pencil"></i></a> &nbsp;
                                         <a href="{{ path('medical_print_bukti_pembayaran', {id: data.id}) }}" target="_blank"><i class="fa fa-dollar"></i></a> &nbsp;
                                         {% if data.hasil is not null %}
                                             {% if data.hasil.isApproved == 1 %}
