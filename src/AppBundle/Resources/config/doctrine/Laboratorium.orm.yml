@@ -8,6 +8,11 @@ AppBundle\Entity\Laboratorium:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        sampel:
+            targetEntity: Sampel
+            mappedBy: idLab
+            cascade: ["remove"]
     lifecycleCallbacks: {  }
     fields:
       namaLab:

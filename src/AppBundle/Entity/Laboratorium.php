@@ -96,4 +96,14 @@ class Laboratorium
     {
         $this->kodeLab = $kodeLab;
     }
+
+    private $sampel;
+
+    /**
+     * @return mixed
+     */
+    public function getSampel()
+    {
+        return $this->sampel;
+    }
 }
