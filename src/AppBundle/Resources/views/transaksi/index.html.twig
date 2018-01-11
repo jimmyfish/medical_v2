@@ -50,6 +50,7 @@
                                                 <a href="{{ path('medical_print_cert', {id: data.id}) }}"><i class="fa fa-print"></i></a>
                                             {% endif %}
                                         {% endif %}
+                                        <a href="{{ path('medical_transact_delete', {id: data.id }) }}" class="text-danger"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 {% set i = i + 1 %}

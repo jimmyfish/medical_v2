@@ -24,6 +24,11 @@ class LaboratoriumType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
+            ])
+            ->add('kodeLab', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control',
+                ]
             ]);
     }
 

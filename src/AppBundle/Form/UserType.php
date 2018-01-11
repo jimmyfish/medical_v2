@@ -67,9 +67,9 @@ class UserType extends AbstractType
                     'class' => 'form-control',
                 ],
                 'choices' => [
-                    'Manajer Teknik' => 'Manajer Teknik',
-                    'Analis' => 'Analis',
-                    'Petugas Pelayanan' => 'Petugas Pelayanan',
+                    'Manajer Teknik' => 1,
+                    'Analis' => 2,
+                    'Petugas Pelayanan' => 3,
                 ],
             ])
             ->add('jabatan', TextType::class, [

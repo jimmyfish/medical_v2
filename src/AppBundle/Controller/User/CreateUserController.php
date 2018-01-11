@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\Common\Util\Debug;
 
 /**
  * Class CreateUserController.
@@ -26,6 +27,17 @@ class CreateUserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+			
+			// MENGATUR ROLE SECARA OTOMATIS SESUAI DENGAN BAGIAN YANG DIPILIH
+            $choices = $user->getBagian();
+            if ($choices == 1) {
+                $user->setRoles(array('ROLE_MANAJER'));
+            } else if ($choices == 2) {
+                $user->setRoles(array('ROLE_ANALIS'));
+            } else if ($choices == 3) {
+                $user->setRoles(array('ROLE_PELAYANAN'));
+            }
+			
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
 
@@ -34,7 +46,7 @@ class CreateUserController extends Controller
 
                 return $this->redirect($request->headers->get('referer'));
             } catch (\Exception $e) {
-                $this->get('session')->getFlashBag()->add('message', 'Email atau Username telah digunakan');
+                $this->addFlash('message', $e->getMessage());
             }
 
             return $this->redirect($request->headers->get('referer'));

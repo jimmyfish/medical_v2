@@ -7,3 +7,9 @@ medical_transact_list:
   path: /
   defaults:
     _controller: AppBundle:Transact/TransactList:index
+
+medical_transact_delete:
+  path: /delete/{id}
+  defaults:
+      _controller: AppBundle:Transact/TransactDelete:index
+  methods: GET
